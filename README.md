@@ -8,7 +8,9 @@ go-apriltag
 Description
 ------------
 
-Apriltags image recognition for Go. Uses Cgo, but does not require any libraries or dependencies.
+Apriltags image recognition for Go.
+
+Uses Cgo, but does not require any libraries or dependencies.
 
 Installation
 ------------
@@ -49,6 +51,8 @@ center := color.RGBA{R: 255, G: 0, B: 0, A: 255}
 corner := color.RGBA{R: 0, G: 255, B: 0, A: 255}
 apriltag.DrawFindings(img.(*image.RGBA), findings, center, corner)
 ```
+
+[![Example output](https://github.com/twitchyliquid64/go-apriltag/raw/master/test_output.png)](https://github.com/twitchyliquid64/go-apriltag/raw/master/test_output.png)
 
 License
 ----------
