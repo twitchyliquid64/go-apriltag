@@ -28,7 +28,7 @@ Documentation
 
 API documentation can be found here: http://godoc.org/github.com/twitchyliquid64/go-apriltag
 
-Trivial example, finding apriltags in a PDF:
+Trivial example, finding apriltags in a PNG:
 
 ```go
 detector := apriltag.New()
