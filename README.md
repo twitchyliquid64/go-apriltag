@@ -43,6 +43,11 @@ if err != nil {
 }
 
 findings := detector.Find(ImgToGrayscale(img)) // list of discovered tags
+
+// If you want you can draw boxes around the tags
+center := color.RGBA{R: 255, G: 0, B: 0, A: 255}
+corner := color.RGBA{R: 0, G: 255, B: 0, A: 255}
+apriltag.DrawFindings(img.(*image.RGBA), findings, center, corner)
 ```
 
 License
@@ -50,3 +55,5 @@ License
 In this repository, those files are an amalgamation of code that was copied from Apriltag.
 The license of that code is the same as the license of Apriltag.
 Apriltag copyright notices remain intact as per license requirements.
+
+For all non-Apriltag code, consider the license text as per the `LICENSE` file.
