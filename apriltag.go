@@ -56,14 +56,19 @@ func grayToC(img *image.Gray) *C.image_u8_t {
 
 // Finding represents a single apriltag detected in an image.
 type Finding struct {
+	// The decoded ID of the tag
 	ID int
 
-	Hamming        int
-	Goodness       float32
+	// The number of error bits that were corrected.
+	Hamming  int
+	Goodness float32
+	// A measure of the quality of the binary decoding process. Higher == better.
 	DecisionMargin float32
 
+	// Centeroid of the detected tag
 	CenterX float64
 	CenterY float64
+	// Bounding edges of the detected tag. [0] = X, [1] = Y.
 	Corners [4][2]float64
 }
 
