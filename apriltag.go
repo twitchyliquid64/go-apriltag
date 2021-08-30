@@ -1,6 +1,6 @@
 package apriltag
 
-// #cgo CFLAGS: -std=gnu99 -fPIC -I. -O4 -fno-strict-overflow
+// #cgo CFLAGS: -std=gnu99 -fPIC -I. -O4
 // #cgo LDFLAGS: -lm
 // #include "apriltag.h"
 // #include "tag36h11.h"
