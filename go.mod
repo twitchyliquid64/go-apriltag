@@ -1,3 +1,3 @@
-module github.com/koeng101/go-apriltag
+module github.com/twitchyliquid64/go-apriltag
 
 go 1.17
