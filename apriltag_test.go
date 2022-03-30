@@ -3,6 +3,7 @@ package apriltag
 import (
 	"image"
 	"image/color"
+	"image/jpeg"
 	"image/png"
 	"os"
 	"testing"
@@ -63,4 +64,25 @@ func TestFind(t *testing.T) {
 	if err = png.Encode(fOut, img); err != nil {
 		t.Fatal(err)
 	}
+}
+
+func TestRealApriltags(t *testing.T) {
+	detector := New()
+	defer detector.Close()
+        f, err := os.Open("testtagsreal.jpeg")
+        if err != nil {
+                t.Fatal(err)
+        }
+        defer f.Close()
+
+        img, err := jpeg.Decode(f)
+        if err != nil {
+                t.Fatal(err)
+        }
+
+        findings := detector.Find(ImgToGrayscale(img))
+	if len(findings) != 80 {
+		t.Errorf("Should have found 80 tags. Found %d.", len(findings))
+	}
+
 }
